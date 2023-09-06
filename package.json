@@ -1,0 +1,47 @@
+{
+  "type": "module",
+  "name": "quickbootjs",
+  "version": "0.1.0",
+  "files": [
+    "./dist"
+  ],
+  "license": "MIT",
+  "bin": "./dist/cli.js",
+  "scripts": {
+    "test": "./node_modules/.bin/vitest",
+    "lint": "npm run lint:format && npm run lint:type",
+    "fixture:check": "./node_modules/.bin/tsx ./src/scripts/test-fixture-app.ts",
+    "lint:eslint": "./node_modules/.bin/eslint --report-unused-disable-directives --max-warnings=0 src",
+    "lint:knip": "./node_modules/.bin/knip",
+    "lint:format": "./node_modules/.bin/prettier --check 'src/**/*'",
+    "lint:format:fix": "./node_modules/.bin/prettier --write 'src/**/*'",
+    "build": "rm -rf dist && ./node_modules/.bin/tsc",
+    "lint:type": "./node_modules/.bin/tsc --noEmit"
+  },
+  "dependencies": {
+    "@babel/core": "7.22.15",
+    "@babel/generator": "7.22.15",
+    "@babel/types": "7.22.15",
+    "cac": "6.7.14",
+    "chalk": "5.3.0",
+    "terser": "5.19.4"
+  },
+  "devDependencies": {
+    "@hono/node-server": "1.1.1",
+    "@types/babel__core": "7.20.1",
+    "@types/babel__generator": "7.6.4",
+    "@types/node": "20.5.9",
+    "@types/react": "18.2.21",
+    "@types/react-dom": "18.2.7",
+    "@typescript-eslint/eslint-plugin": "6.6.0",
+    "eslint": "8.48.0",
+    "hono": "3.5.8",
+    "knip": "2.21.2",
+    "nyc": "15.1.0",
+    "prettier": "3.0.3",
+    "serve": "14.2.1",
+    "tsx": "3.12.8",
+    "typescript": "5.2.2",
+    "vitest": "0.34.3"
+  }
+}
